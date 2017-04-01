@@ -10,6 +10,7 @@
         "httpsAvailable"  : true,
         "httpsUrl"        : null,
         "videoThumbnails" : true,
+        "defaultRoomId": 0,
         "joinUnmutedLimit": 3,
       };
 
