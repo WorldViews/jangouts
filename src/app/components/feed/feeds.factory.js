@@ -192,7 +192,10 @@
       };
 
       this.setVideo360 = function(val) {
-        video360 = val;
+        if (val !== video360) {
+          video360 = val;
+          DataChannelService.sendStatus(this, {exclude: "picture"});
+        }
       };
 
       this.getVideo360 = function() {
