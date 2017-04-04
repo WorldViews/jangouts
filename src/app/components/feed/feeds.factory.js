@@ -45,6 +45,7 @@
       var silentSince = Date.now();
       var videoRemoteEnabled = true;
       var audioRemoteEnabled = true;
+      var video360 = false;
       var stream = null;
       var speakObserver = null;
 
@@ -188,6 +189,14 @@
        */
       this.getVideoEnabled = function() {
         return this.isEnabled("video");
+      };
+
+      this.setVideo360 = function(val) {
+        video360 = val;
+      };
+
+      this.getVideo360 = function() {
+        return video360;
       };
 
       /**
@@ -374,7 +383,7 @@
         options = options || {};
         if (!options.exclude) { options.exclude = []; }
 
-        var attrs = ["audioEnabled", "videoEnabled", "speaking", "picture", "display"];
+        var attrs = ["audioEnabled", "videoEnabled", "speaking", "picture", "display", "video360"];
         var status = {};
 
         _.forEach(attrs, function(attr) {

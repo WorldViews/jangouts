@@ -46,7 +46,7 @@
       vm.username = null;
       vm.room = null;
       vm.rooms = [];
-      vm.defaultRoomId = jhConfig.defaultRoomId
+      vm.defaultRoomId = jhConfig.defaultRoomId;
       vm.listRooms = null;
 
       RoomService.getRooms().then(function(rooms) {

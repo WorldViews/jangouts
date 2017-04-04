@@ -101,8 +101,12 @@
       vm.takePic = takePic;
 
       function thumbnailTag() {
-        if (vm.highlighted || vm.feed.isIgnored) { return "placeholder"; }
-        if (!vm.feed.getVideoEnabled()) { return "placeholder"; }
+        if (vm.highlighted || vm.feed.isIgnored) { 
+          return vm.feed.getPicture() ? "picture" : "placeholder"; 
+        } 
+        if (!vm.feed.getVideoEnabled()) { 
+          return vm.feed.getPicture() ? "picture" : "placeholder"; 
+        }
         if (vm.feed.isPublisher) { return "video"; }
 
         if (vm.feed.getVideoSubscription()) {

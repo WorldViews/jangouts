@@ -43,6 +43,10 @@
     "setTimeout": false,
     "XMLHttpRequest": false,
     // lodash
-    "_": false
+    "_": false,
+    // three.js
+    "THREE": false,
+    "requestAnimationFrame": false,
+    "cancelAnimationFrame": false
   }
 }

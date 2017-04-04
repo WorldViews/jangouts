@@ -11,7 +11,9 @@
   angular.module('janusHangouts')
     .directive('jhMainFeed', jhMainFeedDirective);
 
-  function jhMainFeedDirective() {
+  jhMainFeedDirective.$inject = ['Video360Service'];
+
+  function jhMainFeedDirective(Video360Service) {
     return {
       restrict: 'EA',
       templateUrl: 'app/components/feed/jh-main-feed.html',
@@ -31,6 +33,16 @@
           var video = $('video', element)[0];
           video.muted = true;
           Janus.attachMediaStream(video, newVal);
+        }
+      });
+
+      scope.$watch('vm.feed.getVideo360()', function(newVal) {
+        if (newVal) {
+          // show 360 view
+          Video360Service.createRenderer(element);
+        } else {
+          // hide 360 view
+          Video360Service.removeRenderer(element);
         }
       });
     }

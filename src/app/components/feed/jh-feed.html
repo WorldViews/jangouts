@@ -20,9 +20,10 @@
       ng-show="vm.thumbnailTag() === 'placeholder'">
     </img>
     <canvas
-      ng-show="false">
+      ng-show="false">>
     </canvas>
   </div>
+  {{ vm.feed.getVideo360() }}
   <figcaption
     ng-init="buttons=false">
     <span

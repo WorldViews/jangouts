@@ -199,7 +199,7 @@
         var inner;
 
         // Is this the video grid item?
-        inner = $("#main-video video", $element);
+        inner = $("#main-video video, #main-video canvas", $element);
         if (inner.length) {
           inner.css({height: height + "px", width: width + "px"});
         }
