@@ -23,7 +23,6 @@
       ng-show="false">>
     </canvas>
   </div>
-  {{ vm.feed.getVideo360() }}
   <figcaption
     ng-init="buttons=false">
     <span
@@ -35,6 +34,9 @@
     </span>
     <div class="buttons">
       <jh-unpublish-button feed="vm.feed"></jh-unpublish-button>
+      <span ng-if="vm.feed.getVideo360()">
+        360
+      </span>
       <jh-audio-button feed="vm.feed" with-monitor="true"></jh-audio-button>
     </div>
     <div
