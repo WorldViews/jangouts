@@ -199,6 +199,9 @@
       };
 
       this.getVideoType = function() {
+        if (this.getDisplay() === 'Drone') {
+          return 'drone';
+        }
         return videoType;
       };
 
