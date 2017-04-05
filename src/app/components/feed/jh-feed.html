@@ -34,7 +34,7 @@
     </span>
     <div class="buttons">
       <jh-unpublish-button feed="vm.feed"></jh-unpublish-button>
-      <span ng-if="vm.feed.getVideo360()">
+      <span ng-if="vm.feed.getVideoType() == '360'">
         360
       </span>
       <jh-audio-button feed="vm.feed" with-monitor="true"></jh-audio-button>

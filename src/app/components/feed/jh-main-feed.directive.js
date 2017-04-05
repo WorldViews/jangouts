@@ -11,9 +11,9 @@
   angular.module('janusHangouts')
     .directive('jhMainFeed', jhMainFeedDirective);
 
-  jhMainFeedDirective.$inject = ['Video360Service'];
+  jhMainFeedDirective.$inject = ['Video360Service', 'DroneService'];
 
-  function jhMainFeedDirective(Video360Service) {
+  function jhMainFeedDirective(Video360Service, DroneService) {
     return {
       restrict: 'EA',
       templateUrl: 'app/components/feed/jh-main-feed.html',
@@ -36,8 +36,8 @@
         }
       });
 
-      scope.$watch('vm.feed.getVideo360()', function(newVal) {
-        if (newVal) {
+      scope.$watch('vm.feed.getVideoType()', function(newVal) {
+        if (newVal === '360') {
           // show 360 view
           Video360Service.createRenderer(element);
         } else {
@@ -47,6 +47,16 @@
       });
     }
 
-    function JhMainFeedCtrl() {} 
+    function JhMainFeedCtrl() {
+      this.up = function() {
+        DroneService.up();
+      };
+      this.down = function() {
+        DroneService.down();
+      };
+      this.center = function() {
+        DroneService.center();
+      };
+    } 
   }
 })();

@@ -9,23 +9,23 @@
   'use strict';
 
   angular.module('janusHangouts')
-    .directive('jh360Button', jh360Button);
+    .directive('jhDroneButton', jhDroneButton);
 
   //jh360Button.$inject = ['RoomService'];
 
-  function jh360Button() {
+  function jhDroneButton() {
     return {
       restrict: 'EA',
-      templateUrl: 'app/components/feed/buttons/jh-360-button.html',
+      templateUrl: 'app/components/feed/buttons/jh-drone-button.html',
       scope: {
         feed: '='
       },
       controllerAs: 'vm',
       bindToController: true,
-      controller: Jh360ButtonCtrl
+      controller: JhDroneButtonCtrl
     };
 
-    function Jh360ButtonCtrl() {
+    function JhDroneButtonCtrl() {
       /* jshint: validthis */
       var vm = this;
       vm.toggle = toggle;
@@ -34,16 +34,16 @@
 
       function toggle() {
         //RoomService.toggleChannel("video", vm.feed);
-        var type = vm.feed.getVideoType() === '360' ? 'normal' : '360';
+        var type = vm.feed.getVideoType() === 'drone' ? 'normal' : 'drone';
         vm.feed.setVideoType(type);
       }
 
       function showsEnable() {
-        return (vm.feed && vm.feed.getVideoType() === '360');
+        return (vm.feed && vm.feed.getVideoType() === 'drone');
       }
 
       function showsDisable() {
-        return (vm.feed && vm.feed.getVideoType() !== '360');
+        return (vm.feed && vm.feed.getVideoType() !== 'drone');
       }
     }
   }

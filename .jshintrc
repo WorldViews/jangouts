@@ -46,6 +46,7 @@
     "_": false,
     // three.js
     "THREE": false,
+    "io": false,
     "requestAnimationFrame": false,
     "cancelAnimationFrame": false
   }

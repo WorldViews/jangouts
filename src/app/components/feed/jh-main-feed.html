@@ -1,2 +1,7 @@
+<div ng-if="vm.feed.getVideoType() == 'drone'" class="drone-control" ng-class="{mirrored: vm.feed.mirrored()}">
+    <a class="btn btn-up btn-primary btn-sm" ng-click="vm.up()">Up</a><br/>
+    <a class="btn btn-center btn-primary btn-sm" ng-click="vm.center()">Center</a><br/>
+    <a class="btn btn-down btn-primary btn-sm" ng-click="vm.down()">Down</a><br/>
+</div>
 <video autoplay>
 </video>

@@ -111,6 +111,23 @@ body {
   -webkit-transform:rotateY(180deg); /* Safari and Chrome */
   -moz-transform:rotateY(180deg); /* Firefox */
 }
+
+.drone-control {
+  position: absolute;
+  width: 100px;
+  height: 130px;
+  padding: 10px;
+  left: 10px;
+  top: 10px;
+  border: 1px solid #ccc;
+  background-color: rgba(0, 0, 0, .3);
+  z-index: 1000;
+  .btn {
+    width: 70px;
+    margin-bottom: 5px;
+  }
+}
+
 #jh-chat-messages {
   height: 40px;
 }
